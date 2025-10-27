@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Basic Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Security Headers -->
+    <!-- Security Headers -->
+    <!-- Note: script-src includes a sha256 hash for the inline JSON-LD below; if you change that JSON-LD you must update the hash. -->
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net 'sha256-VPyX9KV90zUdXVw0c60f6eYItd4OaCCC39o5GlEykiY='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://cdn.jsdelivr.net; frame-ancestors 'none';">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
+
+    <!-- SEO Meta Tags -->
+    <title>Cipher | Privacy Policy</title>
+    <meta name="description"
+        content="Cipher is a local-first authenticator app that generates and stores TOTP codes on-device. We do not collect any personal data.">
+    <meta name="keywords" content="authenticator, 2FA, TOTP, privacy, security">
+    <meta name="author" content="bytesizedwizard">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://bytesizedwizard.dev/">
+
+    <!-- Open Graph Meta Tags (Facebook, LinkedIn) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Cipher | Privacy Policy">
+    <meta property="og:description"
+        content="Cipher is a local-first authenticator app that stores TOTP secrets only on your device.">
+    <meta property="og:url" content="https://bytesizedwizard.dev/">
+    <meta property="og:site_name" content="bytesizedwizard.dev">
+    <meta property="og:image" content="https://bytesizedwizard.dev/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="bytesizedwizard website preview">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@bytesizedwizard">
+    <meta name="twitter:creator" content="@bytesizedwizard">
+    <meta name="twitter:title" content="bytesizedwizard">
+    <meta name="twitter:description" content="Cipher — local-first, privacy-focused authenticator.">
+    <meta name="twitter:image" content="https://bytesizedwizard.dev/twitter-card.jpg">
+    <meta name="twitter:image:alt" content="bytesizedwizard website preview">
+
+    <!-- Favicon and App Icons -->
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#FFD900">
+    <meta name="msapplication-TileColor" content="#1E1E1E">
+    <meta name="msapplication-config" content="/browserconfig.xml">
+
+    <!-- Performance Optimization -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Schema.org Structured Data (inline JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "bytesizedwizard",
+        "url": "https://bytesizedwizard.dev/",
+        "description": "A comprehensive description of your website content.",
+        "author": {
+            "@type": "Person",
+            "name": "bytesizedwizard"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "bytesizedwizard"
+        }
+    }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- CSS Placeholder (add your stylesheets here) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sen:wght@400..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap" rel="stylesheet">
+
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            color: #FFFFFF;
+        }
+
+        .sen-regular {
+            font-family: "Sen", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            line-height: 150%;
+        }
+
+        .sen-medium {
+            font-family: "Sen", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 500;
+            font-style: normal;
+            line-height: 150%;
+        }
+
+        .sen-semibold {
+            font-family: "Sen", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 600;
+            font-style: normal;
+            line-height: 150%;
+        }
+
+        .sen-bold {
+            font-family: "Sen", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 700;
+            font-style: normal;
+            line-height: 150%;
+        }
+
+        .inter-regular {
+            font-family: "Inter", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 300;
+            font-style: normal;
+            line-height: 150%;
+        }
+    </style>
+</head>
+
+<body class="h-full w-full bg-[#02140E]">
+    <div class="w-full h-full flex flex-col items-center justify-start p-12">
+        <img src="logotype-cipher.png" alt="bytesizedwizard logo image" class=" w-xs h-auto" />
+
+        <hr class="border-t border-[#FFFFFF] w-full my-10" />
+
+        <section class="text-left flex flex-col items-start justify-center" id="content">
+            <h1 class="text-3xl mb-3 sen-bold">Privacy Policy</h1>
+            <p class="text-base inter-regular mb-5">Last updated: October 27, 2025</p>
+
+            <p class="text-base inter-regular mb-5"><strong>Cipher</strong> (“we”, “our”, or “the App”) is an
+                authenticator application designed to generate and manage time-based one-time passwords (TOTPs) and
+                related multi-factor authentication data. Cipher is built to be local-first and privacy-respecting. This
+                Privacy Policy explains our approach and confirms that we do not collect personal data.</p>
+
+            <h2 class="text-xl sen-semibold mb-3">1. Summary — What we collect</h2>
+            <ul class="text-base inter-regular mb-5 list-inside">
+                <li><strong>No personal data:</strong> Cipher does <em>not</em> collect, transmit, or store any personal
+                    data on our servers. There is no analytics, no crash reporting, no email collection, and no tracking
+                    by default.</li>
+                <li><strong>Local-only secrets:</strong> TOTP secrets and related metadata are generated and stored
+                    locally on your device and encrypted. These secrets never leave your device unless you expressly
+                    choose to export them using a feature you intentionally trigger (not present by default).</li>
+            </ul>
+
+            <h2 class="text-xl sen-semibold mb-3">2. No account required & local-first design</h2>
+            <p class="text-base inter-regular mb-5">Cipher is designed to work <strong>without creating an
+                    account</strong>. By default, all authentication secrets and related data are generated, stored,
+                and used only on your device. We do not transmit or store authenticator secrets, usage data, or contact
+                information on our servers.</p>
+
+            <h2 class="text-xl sen-semibold mb-3">3. Authentication secrets & technical storage</h2>
+            <p class="text-base inter-regular mb-3">All secrets (TOTP shared secrets, account labels, and any metadata
+                necessary to generate codes) are:</p>
+            <ul class="text-base inter-regular mb-10 list-disc list-inside">
+                <li>Encrypted at rest on your device using industry-standard encryption.</li>
+                <li>Never sent to our servers under normal operation.</li>
+                <li>Stored in a format that minimizes plaintext exposure; the app implements secure key handling to
+                    reduce in-memory exposure.</li>
+            </ul>
+
+            <h2 class="text-xl sen-semibold mb-3">4. Backups, sync & third-party services</h2>
+            <p class="text-base inter-regular mb-5">Cipher does not perform automatic cloud backups or synchronization
+                by default. If we introduce an optional export, backup, or sync feature in the future, it will be:
+            </p>
+            <ul class="text-base inter-regular mb-5 list-inside">
+                <li>Explicitly opt-in and clearly described to the user before any data leaves the device.</li>
+                <li>Encrypted before leaving your device whenever possible, with key handling and procedures documented
+                    at the time of opt-in.</li>
+            </ul>
+
+            <h2 class="text-xl sen-semibold mb-3">5. Analytics, cookies & third-party tracking</h2>
+            <p class="text-base inter-regular mb-5">Cipher does not include advertising and does not collect analytics
+                or place tracking cookies by default. If optional analytics or crash reporting is ever provided, it
+                will be opt-in and clearly described at the point of opt-in.</p>
+
+            <h2 class="text-xl sen-semibold mb-3">6. Data retention</h2>
+            <p class="text-base inter-regular mb-5">Local authenticator data is retained on your device until you
+                manually delete it or uninstall the application. Because Cipher does not collect personal data, we do
+                not retain user data on any server.</p>
+
+            <h2 class="text-xl sen-semibold mb-3">7. Data security</h2>
+            <p class="text-base inter-regular mb-5">We implement reasonable technical and organizational measures to
+                protect local data and any optional services we may offer in the future, including:</p>
+            <ul class="text-base inter-regular mb-5 list-disc list-inside">
+                <li>Encryption of secrets at rest on the device (AES-grade or equivalent).</li>
+                <li>Secure handling practices to reduce accidental memory exposure.</li>
+                <li>Use of HTTPS/TLS for any optional network communication and strong access controls on any server
+                    endpoints we operate.</li>
+            </ul>
+            <p class="text-md inter-medium mb-5">Despite these measures, no system is perfectly secure. If you suspect a
+                security issue, please contact us immediately (see “Contact” below).</p>
+
+            <h2 class="text-xl sen-semibold mb-3">8. Children</h2>
+            <p class="text-base inter-regular mb-5">Cipher is not intended for children under <strong>13</strong>. We do
+                not knowingly collect personal information from children. If you are a parent or guardian and believe
+                your child has provided personal data to Cipher, please contact us and we will advise on how to remove
+                that data from the device if possible.</p>
+
+            <h2 class="text-xl sen-semibold mb-3">9. Your Rights</h2>
+            <p class="text-base inter-regular mb-3">Because Cipher does not collect, store, or process personal data on
+                our servers, there is no personal data for us to provide, correct, or delete. All authentication data
+                and secrets remain local to your device and under your direct control. If you wish to remove stored
+                information, you can do so by uninstalling the app or deleting data within the app (when such controls
+                are available).</p>
+
+            <p class="text-base inter-regular mb-3">We fully support user privacy and data protection. If Cipher
+                introduces optional features that involve processing personal data in the future, those features will be
+                clearly described, optional, and will include controls to access, update, or delete that data.</p>
+
+            <h2 class="text-xl sen-semibold mb-3">10. International transfers</h2>
+            <p class="text-base inter-regular mb-5">Because Cipher does not transmit personal data by default, no
+                international transfers occur. If you opt in to any future features that use third-party providers
+                (e.g., backups or email services), those providers may process data in other jurisdictions; appropriate
+                safeguards will be described at the time of opt-in.</p>
+
+            <h2 class="text-xl sen-semibold mb-3">11. Changes to this policy</h2>
+            <p class="text-base inter-regular mb-5">We may update this Privacy Policy periodically. We will post the
+                revised policy on this page with an updated “Last updated” date. If we introduce material changes that
+                affect how personal data is processed, we will provide clear notice within the application or via any
+                contact method you have explicitly provided to us.</p>
+
+            <h2 class="text-xl sen-semibold mb-3">12. Contact</h2>
+            <p class="text-base inter-regular mb-3">If you have questions, requests, or privacy concerns, please contact
+                us at <a class="text-lg sen-medium underline"
+                    href="mailto:tobytesizedwizard@proton.me">tobytesizedwizard@proton.me</a>.</p>
+
+            <p class="text-base inter-regular">We aim to respond to privacy inquiries promptly and in compliance with
+                applicable law.</p>
+
+            <hr class="border-t border-[#FFFFFF] w-full my-10" />
+
+            <div class="text-base inter-regular mb-5">
+                <h3 class="text-lg sen-semibold mb-2">Note</h3>
+                <p class="text-base inter-regular">This privacy policy provides general information about how Cipher
+                    handles personal data. It is not legal advice. If you require a privacy policy tailored to a
+                    specific jurisdiction or regulatory framework (for example, the GDPR, CCPA, or other local laws),
+                    consider consulting a qualified attorney to ensure compliance with applicable legal requirements.
+                </p>
+            </div>
+
+            <hr class="border-t border-[#FFFFFF] w-full my-10" />
+
+            <img src="logotype-bsw.png" alt="bytesizedwizard logo image" class="mb-5 w-xs h-auto" />
+        </section>
+
+    </div>
+</body>
+
+</html>
