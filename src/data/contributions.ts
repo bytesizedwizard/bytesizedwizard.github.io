@@ -5,52 +5,26 @@ export interface Contribution {
   description: string
   prUrl?: string
   mergedAt?: string
-  status: 'merged' | 'open' | 'draft'
+  status: 'merged' | 'open' | 'draft' | 'accepted'
 }
 
 export const contributions: Contribution[] = [
   {
     id: 'c1',
-    repo: 'react',
-    org: 'facebook',
-    description: 'Fixed edge case in concurrent rendering where state updates in transitions were batched incorrectly under certain error boundaries.',
-    prUrl: 'https://github.com/facebook/react/pull/00001',
-    mergedAt: 'Jan 2026',
-    status: 'merged',
+    repo: 'openai-go',
+    org: 'openai',
+    description: 'Set the \'Include Usage\' parameter under \'Stream Options\' to true in the \'chat-completion-accumulating\' example',
+    prUrl: 'https://github.com/openai/openai-go/pull/125',
+    mergedAt: 'November 18, 2024',
+    status: 'accepted',
   },
   {
     id: 'c2',
-    repo: 'vite',
-    org: 'vitejs',
-    description: 'Improved HMR performance for large TypeScript monorepos by optimizing the dependency graph traversal on file change.',
-    prUrl: 'https://github.com/vitejs/vite/pull/00002',
-    mergedAt: 'Nov 2025',
-    status: 'merged',
-  },
-  {
-    id: 'c3',
-    repo: 'tailwindcss',
-    org: 'tailwindlabs',
-    description: 'Added documentation and examples for the new `backgroundSize` arbitrary values introduced in v3.4.',
-    prUrl: 'https://github.com/tailwindlabs/tailwindcss/pull/00003',
-    mergedAt: 'Sep 2025',
-    status: 'merged',
-  },
-  {
-    id: 'c4',
-    repo: 'framer-motion',
-    org: 'framer',
-    description: 'Proposed and implemented `useReducedMotion` fallback support for the new `animate` hook variants.',
-    prUrl: 'https://github.com/framer/motion/pull/00004',
-    status: 'open',
-  },
-  {
-    id: 'c5',
-    repo: 'commander.js',
-    org: 'tj',
-    description: 'Refactored the argument parser to correctly handle nested sub-commands with overlapping option names.',
-    prUrl: 'https://github.com/tj/commander.js/pull/00005',
-    mergedAt: 'Jul 2025',
+    repo: 'fl_chart',
+    org: 'imaNNeo',
+    description: 'Added fitInsideVertically support for bar chart and line chart tooltips',
+    prUrl: 'https://github.com/imaNNeo/fl_chart/pull/240',
+    mergedAt: 'March 15, 2020',
     status: 'merged',
   },
 ]

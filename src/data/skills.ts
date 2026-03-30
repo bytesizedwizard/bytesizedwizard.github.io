@@ -12,37 +12,34 @@ export interface SkillCategory {
 
 const allSkills: Skill[] = [
   // Languages
+  { name: 'Go', iconSlug: 'go', category: 'language' },
   { name: 'TypeScript', iconSlug: 'typescript', category: 'language' },
   { name: 'JavaScript', iconSlug: 'javascript', category: 'language' },
-  { name: 'Swift', iconSlug: 'swift', category: 'language' },
-  { name: 'Kotlin', iconSlug: 'kotlin', category: 'language' },
   { name: 'Python', iconSlug: 'python', category: 'language' },
-  { name: 'Go', iconSlug: 'go', category: 'language' },
+  { name: 'Dart', iconSlug: 'dart', category: 'language' },
 
   // Frameworks & Libraries
+  { name: 'Angular', iconSlug: 'angular', category: 'framework' },
   { name: 'React', iconSlug: 'react', category: 'framework' },
   { name: 'Node.js', iconSlug: 'nodedotjs', category: 'framework' },
   { name: 'Next.js', iconSlug: 'nextdotjs', category: 'framework' },
   { name: 'Tailwind CSS', iconSlug: 'tailwindcss', category: 'framework' },
-  { name: 'Vite', iconSlug: 'vite', category: 'framework' },
 
   // Mobile
-  { name: 'SwiftUI', iconSlug: 'swift', category: 'mobile' },
-  { name: 'Jetpack Compose', iconSlug: 'jetpackcompose', category: 'mobile' },
-  { name: 'React Native', iconSlug: 'react', category: 'mobile' },
   { name: 'Flutter', iconSlug: 'flutter', category: 'mobile' },
 
   // Infrastructure & Tooling
   { name: 'Docker', iconSlug: 'docker', category: 'infra' },
   { name: 'GitHub Actions', iconSlug: 'githubactions', category: 'infra' },
-  { name: 'AWS', iconSlug: 'amazonaws', category: 'infra' },
+  { name: 'AWS', iconSlug: 'aws', category: 'infra' },
+  { name: 'Kubernetes', iconSlug: 'kubernetes', category: 'infra' },
   { name: 'Linux', iconSlug: 'linux', category: 'infra' },
 
   // Databases
   { name: 'PostgreSQL', iconSlug: 'postgresql', category: 'database' },
   { name: 'MongoDB', iconSlug: 'mongodb', category: 'database' },
   { name: 'Redis', iconSlug: 'redis', category: 'database' },
-  { name: 'SQLite', iconSlug: 'sqlite', category: 'database' },
+  { name: 'MySQL', iconSlug: 'mysql', category: 'database' },
 ]
 
 export const skillCategories: SkillCategory[] = [
