@@ -24,7 +24,7 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
       viewport={{ once: true, amount: 0.15 }}
       transition={{ duration: 0.5, delay: index * 0.1, ease: 'easeOut' }}
       whileHover={{ y: -6 }}
-      className="group relative flex flex-col bg-bg-surface border border-border rounded-2xl p-6 overflow-hidden transition-shadow duration-200 hover:shadow-card-hover hover:border-accent/30"
+      className="magic-card group relative flex flex-col bg-bg-surface border border-border rounded-2xl p-6 overflow-hidden transition-shadow duration-200 hover:shadow-card-hover hover:border-accent/30"
     >
       {/* Top row */}
       <div className="flex items-start justify-between mb-4">

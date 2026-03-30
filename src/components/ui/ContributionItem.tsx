@@ -11,6 +11,7 @@ const statusConfig = {
   merged: { label: 'Merged', className: 'bg-green-500/10 text-green-400 border-green-500/20' },
   open: { label: 'Open', className: 'bg-accent/10 text-accent border-accent/20' },
   draft: { label: 'Draft', className: 'bg-text-muted/10 text-text-muted border-text-muted/20' },
+  accepted: { label: 'Accepted', className: 'bg-blue-500/10 text-blue-400 border-blue-500/20' },
 }
 
 export function ContributionItem({ contribution, index = 0 }: ContributionItemProps) {

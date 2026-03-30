@@ -6,7 +6,7 @@ interface SkillBadgeProps {
 
 export function SkillBadge({ skill }: SkillBadgeProps) {
   return (
-    <div className="group flex flex-col items-center gap-2 p-4 bg-bg-surface border border-border rounded-2xl hover:border-accent/30 hover:bg-accent-dim hover:-translate-y-0.5 transition-all duration-200 cursor-default">
+    <div className="magic-card group flex flex-col items-center gap-2 p-4 bg-bg-surface border border-border rounded-2xl hover:border-accent/30 hover:bg-accent-dim hover:-translate-y-0.5 transition-all duration-200 cursor-default">
       <img
         src={`https://cdn.simpleicons.org/${skill.iconSlug}`}
         alt={`${skill.name} icon`}

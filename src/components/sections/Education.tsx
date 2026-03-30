@@ -27,7 +27,7 @@ export function Education() {
                 aria-hidden
               />
 
-              <div className="bg-bg-surface border border-border rounded-2xl p-6 hover:border-accent/25 transition-colors duration-200">
+              <div className="magic-card bg-bg-surface border border-border rounded-2xl p-6 hover:border-accent/25 transition-colors duration-200">
                 <div className="flex flex-wrap items-start justify-between gap-2 mb-2">
                   <h3 className="font-heading font-semibold text-lg text-text-primary">
                     {entry.institution}

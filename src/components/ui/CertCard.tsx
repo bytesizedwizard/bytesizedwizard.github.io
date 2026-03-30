@@ -14,7 +14,7 @@ export function CertCard({ cert, index = 0 }: CertCardProps) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.5, delay: index * 0.08, ease: 'easeOut' }}
-      className="shimmer-hover group relative flex flex-col gap-3 bg-bg-surface border border-border rounded-2xl p-5 overflow-hidden hover:border-accent/30 transition-all duration-200"
+      className="magic-card shimmer-hover group relative flex flex-col gap-3 bg-bg-surface border border-border rounded-2xl p-5 overflow-hidden hover:border-accent/30 transition-all duration-200"
     >
       {/* Issuer logo + name */}
       <div className="flex items-center gap-3">
