@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { ExternalLink, GitPullRequest, AppWindow, ShieldCheck } from 'lucide-react'
+import { ExternalLink, GitPullRequest, ShieldCheck } from 'lucide-react'
 import type { Project } from '@/data/projects'
 
 interface FeaturedProjectCardProps {
@@ -61,17 +61,42 @@ export function FeaturedProjectCard({ project }: FeaturedProjectCardProps) {
             ))}
           </div>
 
-          {/* Links */}
-          <div className="flex flex-wrap gap-3">
+          {/* Store badges + secondary links – all in one flex row */}
+          <div className="flex flex-wrap items-center gap-3">
             {project.links.appStore && (
               <a
                 href={project.links.appStore}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white text-black font-body font-medium text-sm hover:bg-white/90 transition-colors duration-200 cursor-pointer"
+                aria-label="Download on the App Store"
+                className="transition-opacity duration-200 hover:opacity-80 focus-visible:opacity-80"
               >
-                <AppWindow size={16} />
-                App Store
+                {/* Apple App Store badge – minimum 120×40pt per Apple HIG */}
+                <img
+                  src="/app-store-badge.svg"
+                  alt="Download on the App Store"
+                  height="40"
+                  className="h-[40px] w-auto"
+                  draggable={false}
+                />
+              </a>
+            )}
+            {project.links.playStore && (
+              <a
+                href={project.links.playStore}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Get it on Google Play"
+                className="transition-opacity duration-200 hover:opacity-80 focus-visible:opacity-80"
+              >
+                {/* Google Play badge – rendered at same visual height as App Store badge */}
+                <img
+                  src="/play-store-badge.svg"
+                  alt="Get it on Google Play"
+                  height="40"
+                  className="h-[40px] w-auto"
+                  draggable={false}
+                />
               </a>
             )}
             {project.links.github && (
