@@ -69,11 +69,8 @@ export function Navbar() {
             className="cursor-pointer"
             aria-label="Go to top"
           >
-            <img
-              src="/logotype.png"
-              alt="bytesizedwizard"
-              className="h-7 w-auto object-contain dark:brightness-100 brightness-0"
-            />
+            <img src="/logotype.png" alt="bytesizedwizard" className="block dark:hidden h-7 w-auto object-contain" />
+            <img src="/logotype-dark.png" alt="bytesizedwizard" className="hidden dark:block h-7 w-auto object-contain" />
           </a>
 
           {/* Desktop nav */}
@@ -93,12 +90,8 @@ export function Navbar() {
             ))}
           </nav>
 
-          {/* Right: theme + hire badge */}
+          {/* Right: theme toggle */}
           <div className="flex items-center gap-3">
-            <span className="hidden sm:inline-flex items-center gap-1.5 text-xs font-body font-light px-3 py-1.5 rounded-full bg-accent/10 border border-accent/20 text-accent">
-              <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
-              Available for hire
-            </span>
             <ThemeToggle />
             {/* Mobile hamburger */}
             <button

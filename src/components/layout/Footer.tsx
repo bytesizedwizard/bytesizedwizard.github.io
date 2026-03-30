@@ -12,12 +12,8 @@ export function Footer() {
     <footer className="border-t border-border mt-0">
       <div className="max-w-[1100px] mx-auto px-6 py-10 flex flex-col items-center gap-6">
         {/* Logotype watermark */}
-        <img
-          src="/logotype.png"
-          alt="bytesizedwizard"
-          className="h-6 w-auto object-contain opacity-20 dark:brightness-100 brightness-0"
-          aria-hidden
-        />
+        <img src="/logotype.png" alt="bytesizedwizard" className="block dark:hidden h-6 w-auto object-contain opacity-20" aria-hidden />
+        <img src="/logotype-dark.png" alt="bytesizedwizard" className="hidden dark:block h-6 w-auto object-contain opacity-20" aria-hidden />
 
         {/* Social links */}
         <div className="flex items-center gap-4">
