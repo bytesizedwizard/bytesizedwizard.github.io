@@ -40,8 +40,33 @@ export function Hero() {
       <GlowOrb size="md" className="bottom-24 -left-16" opacity={0.05} />
 
       <div className="relative z-10 max-w-[1100px] mx-auto px-6 py-32 w-full">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Left: text content */}
+        <div className="grid md:grid-cols-[auto_1fr] gap-12 items-center">
+          {/* Left: mascot – visible on all breakpoints */}
+          <div className="flex justify-center items-center relative py-2 md:py-0">
+            <GlowOrb size="lg" className="absolute inset-0 m-auto" opacity={0.12} />
+            <motion.img
+              src="/logo.png"
+              alt="bytesizedwizard mascot"
+              className="relative z-10 w-36 sm:w-44 md:w-60 xl:w-72 h-auto drop-shadow-2xl"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={
+                reduceMotion
+                  ? { opacity: 1, scale: 1 }
+                  : { opacity: 1, scale: 1, y: [0, -10, 0] }
+              }
+              transition={
+                reduceMotion
+                  ? { duration: 0.6, delay: 0.8 }
+                  : {
+                      opacity: { duration: 0.6, delay: 0.8 },
+                      scale: { duration: 0.6, delay: 0.8 },
+                      y: { duration: 4, repeat: Infinity, ease: 'easeInOut', delay: 1.2 },
+                    }
+              }
+            />
+          </div>
+
+          {/* Right: text content */}
           <motion.div
             variants={containerVariants}
             initial="hidden"
@@ -56,13 +81,13 @@ export function Hero() {
             </motion.div>
 
             {/* Display name */}
-            <motion.h1 variants={itemVariants} className="font-display font-extrabold leading-none glow-text" style={{ fontSize: 'clamp(2.8rem, 7vw, 5.5rem)', letterSpacing: '-0.04em' }}>
+            <motion.h1 variants={itemVariants} className="font-display font-extrabold leading-none glow-text" style={{ fontSize: 'clamp(2rem, 5.5vw, 4.2rem)', letterSpacing: '-0.04em' }}>
               <AnimatedText text="bytesizedwizard" delay={0.5} />
             </motion.h1>
 
             {/* Role */}
             <motion.p variants={itemVariants} className="font-heading font-semibold text-lg md:text-xl text-text-secondary">
-              Senior Software Developer · Technical Lead
+              Technical Lead · Part-time Magician
             </motion.p>
 
             {/* Tagline */}
@@ -91,31 +116,6 @@ export function Hero() {
               </a>
             </motion.div>
           </motion.div>
-
-          {/* Right: mascot */}
-          <div className="hidden md:flex justify-center items-center relative">
-            <GlowOrb size="lg" className="absolute inset-0 m-auto" opacity={0.12} />
-            <motion.img
-              src="/logo.png"
-              alt="bytesizedwizard mascot"
-              className="relative z-10 w-64 xl:w-72 h-auto drop-shadow-2xl"
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={
-                reduceMotion
-                  ? { opacity: 1, scale: 1 }
-                  : { opacity: 1, scale: 1, y: [0, -10, 0] }
-              }
-              transition={
-                reduceMotion
-                  ? { duration: 0.6, delay: 0.8 }
-                  : {
-                      opacity: { duration: 0.6, delay: 0.8 },
-                      scale: { duration: 0.6, delay: 0.8 },
-                      y: { duration: 4, repeat: Infinity, ease: 'easeInOut', delay: 1.2 },
-                    }
-              }
-            />
-          </div>
         </div>
 
         {/* Scroll indicator */}
