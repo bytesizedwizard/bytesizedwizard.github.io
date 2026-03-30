@@ -8,30 +8,32 @@ export default {
   theme: {
     extend: {
       colors: {
+        // All tokens use rgb(var(--xxx-rgb) / <alpha-value>) so Tailwind's
+        // opacity modifier syntax (bg-bg-surface/30) works AND the values
+        // respond to the .light theme class via CSS custom properties.
         accent: {
-          DEFAULT: '#FFD900',
-          dim: 'rgba(255,217,0,0.08)',
+          DEFAULT: 'rgb(var(--accent-rgb) / <alpha-value>)',
+          dim: 'var(--accent-dim)',
           hover: '#FFE033',
           light: '#8A6B00',
         },
         bg: {
-          base: '#09090B',
-          surface: '#111113',
-          elevated: '#18181B',
+          base: 'rgb(var(--bg-base-rgb) / <alpha-value>)',
+          surface: 'rgb(var(--bg-surface-rgb) / <alpha-value>)',
+          elevated: 'rgb(var(--bg-elevated-rgb) / <alpha-value>)',
         },
         border: {
-          DEFAULT: '#27272A',
-          subtle: '#1C1C1F',
+          DEFAULT: 'rgb(var(--border-rgb) / <alpha-value>)',
+          subtle: 'rgb(var(--border-subtle-rgb) / <alpha-value>)',
         },
         text: {
-          primary: '#F5F5F5',
-          secondary: '#A1A1AA',
-          muted: '#52525B',
+          primary: 'rgb(var(--text-primary-rgb) / <alpha-value>)',
+          secondary: 'rgb(var(--text-secondary-rgb) / <alpha-value>)',
+          muted: 'rgb(var(--text-muted-rgb) / <alpha-value>)',
         },
         cipher: {
           bg: '#02140E',
         },
-        // Light mode overrides applied via CSS vars
       },
       fontFamily: {
         display: ['Sen', 'sans-serif'],

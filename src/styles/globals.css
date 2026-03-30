@@ -4,7 +4,7 @@
 
 /* ─── CSS Custom Properties ─────────────────────────────────────────────── */
 :root {
-  /* Dark mode defaults */
+  /* Dark mode defaults – hex values for inline/plain CSS usage */
   --bg-base: #09090B;
   --bg-surface: #111113;
   --bg-elevated: #18181B;
@@ -15,6 +15,16 @@
   --text-primary: #F5F5F5;
   --text-secondary: #A1A1AA;
   --text-muted: #52525B;
+  /* RGB channels – required for Tailwind opacity modifiers (bg-bg-surface/30 etc.) */
+  --accent-rgb: 255 217 0;
+  --bg-base-rgb: 9 9 11;
+  --bg-surface-rgb: 17 17 19;
+  --bg-elevated-rgb: 24 24 27;
+  --border-rgb: 39 39 42;
+  --border-subtle-rgb: 28 28 31;
+  --text-primary-rgb: 245 245 245;
+  --text-secondary-rgb: 161 161 170;
+  --text-muted-rgb: 82 82 91;
 }
 
 .light {
@@ -24,10 +34,20 @@
   --border: #E4E4E7;
   --border-subtle: #F0F0F2;
   --accent: #8A6B00;
-  --accent-dim: rgba(255, 217, 0, 0.15);
+  --accent-dim: rgba(138, 107, 0, 0.12);
   --text-primary: #09090B;
   --text-secondary: #52525B;
   --text-muted: #A1A1AA;
+  /* RGB channels for light mode */
+  --accent-rgb: 138 107 0;
+  --bg-base-rgb: 250 250 250;
+  --bg-surface-rgb: 255 255 255;
+  --bg-elevated-rgb: 244 244 245;
+  --border-rgb: 228 228 231;
+  --border-subtle-rgb: 240 240 242;
+  --text-primary-rgb: 9 9 11;
+  --text-secondary-rgb: 82 82 91;
+  --text-muted-rgb: 161 161 170;
 }
 
 /* ─── Base Resets ────────────────────────────────────────────────────────── */
@@ -135,6 +155,9 @@ body {
 .glow-text {
   text-shadow: 0 0 40px rgba(255, 217, 0, 0.35), 0 0 80px rgba(255, 217, 0, 0.15);
 }
+.light .glow-text {
+  text-shadow: none;
+}
 
 /* ─── Scroll progress bar ────────────────────────────────────────────────── */
 #scroll-progress {
@@ -164,4 +187,157 @@ body {
     transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
   }
+}
+
+/* ─── Magic background – ambient blobs ──────────────────────────────────── */
+.magic-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  pointer-events: none;
+  will-change: transform;
+}
+
+.magic-blob-1 {
+  width: 720px;
+  height: 720px;
+  background: radial-gradient(ellipse, rgba(255, 217, 0, 0.09) 0%, transparent 70%);
+  top: -240px;
+  left: 18%;
+  animation: blobDrift1 90s ease-in-out infinite alternate;
+}
+
+.magic-blob-2 {
+  width: 580px;
+  height: 580px;
+  background: radial-gradient(ellipse, rgba(255, 217, 0, 0.065) 0%, transparent 70%);
+  bottom: 6%;
+  right: 10%;
+  animation: blobDrift2 70s ease-in-out infinite alternate;
+}
+
+.magic-blob-3 {
+  width: 460px;
+  height: 460px;
+  background: radial-gradient(ellipse, rgba(200, 160, 0, 0.07) 0%, transparent 70%);
+  top: 40%;
+  left: -10%;
+  animation: blobDrift3 110s ease-in-out infinite alternate;
+}
+
+.magic-blob-4 {
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(ellipse, rgba(255, 200, 0, 0.06) 0%, transparent 70%);
+  top: 62%;
+  left: 52%;
+  animation: blobDrift2 85s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes blobDrift1 {
+  0%   { transform: translate(0, 0) scale(1); }
+  33%  { transform: translate(80px, 60px) scale(1.07); }
+  66%  { transform: translate(-50px, 110px) scale(0.96); }
+  100% { transform: translate(65px, -35px) scale(1.04); }
+}
+
+@keyframes blobDrift2 {
+  0%   { transform: translate(0, 0) scale(1); }
+  50%  { transform: translate(-75px, -55px) scale(1.06); }
+  100% { transform: translate(55px, 35px) scale(0.97); }
+}
+
+@keyframes blobDrift3 {
+  0%   { transform: translate(0, 0) scale(1); }
+  40%  { transform: translate(110px, -25px) scale(1.05); }
+  100% { transform: translate(-35px, 55px) scale(0.98); }
+}
+
+/* ─── Magic background – aurora strip ───────────────────────────────────── */
+.magic-aurora {
+  position: absolute;
+  top: -160px;
+  left: -10%;
+  width: 120%;
+  height: 480px;
+  background: linear-gradient(
+    150deg,
+    transparent 0%,
+    rgba(255, 217, 0, 0.04) 35%,
+    rgba(255, 190, 0, 0.03) 55%,
+    transparent 80%
+  );
+  filter: blur(50px);
+  pointer-events: none;
+  animation: auroraShift 30s ease-in-out infinite alternate;
+}
+
+@keyframes auroraShift {
+  0%   { transform: translateX(-12%) skewX(-4deg) scaleY(0.95); }
+  100% { transform: translateX(12%) skewX(4deg) scaleY(1.05); }
+}
+
+/* ─── Magic background – floating particles ─────────────────────────────── */
+@keyframes floatParticle {
+  0%   { transform: translateY(100vh) translateX(0);                       opacity: 0;    }
+  8%   { opacity: 0.6; }
+  92%  { opacity: 0.25; }
+  100% { transform: translateY(-10vh) translateX(var(--pdrift, 30px));     opacity: 0;    }
+}
+
+.magic-particle {
+  position: absolute;
+  bottom: -4px;
+  background: #FFD900;
+  border-radius: 50%;
+  animation: floatParticle linear infinite;
+  will-change: transform, opacity;
+}
+
+/* ─── Light mode magic effects – warm amber adapted for white backgrounds ─ */
+/* Blobs use golden-warm gradients with higher opacity to be visible on white */
+.light .magic-blob-1 {
+  background: radial-gradient(ellipse, rgba(255, 210, 0, 0.20) 0%, transparent 70%);
+}
+.light .magic-blob-2 {
+  background: radial-gradient(ellipse, rgba(255, 200, 0, 0.14) 0%, transparent 70%);
+}
+.light .magic-blob-3 {
+  background: radial-gradient(ellipse, rgba(245, 180, 0, 0.12) 0%, transparent 70%);
+}
+.light .magic-blob-4 {
+  background: radial-gradient(ellipse, rgba(255, 215, 0, 0.10) 0%, transparent 70%);
+}
+/* Aurora uses a warmer, more visible tone on bright backgrounds */
+.light .magic-aurora {
+  background: linear-gradient(
+    150deg,
+    transparent 0%,
+    rgba(255, 210, 0, 0.12) 35%,
+    rgba(240, 170, 0, 0.08) 55%,
+    transparent 80%
+  );
+}
+/* Particles use dark golden color visible on white; brighter keyframes */
+@keyframes floatParticleLight {
+  0%   { transform: translateY(100vh) translateX(0);                   opacity: 0;    }
+  8%   { opacity: 0.65; }
+  92%  { opacity: 0.35; }
+  100% { transform: translateY(-10vh) translateX(var(--pdrift, 30px)); opacity: 0;    }
+}
+.light .magic-particle {
+  background: #B8860B;
+  animation-name: floatParticleLight;
+}
+
+/* ─── Wizard magic card hover glow ──────────────────────────────────────── */
+/* Add class="magic-card" to any card component to activate the golden glow. */
+.magic-card {
+  transition: box-shadow 0.3s ease;
+}
+.magic-card:hover {
+  box-shadow:
+    0 0 0 1px rgb(var(--accent-rgb) / 0.16),
+    0 0 28px rgb(var(--accent-rgb) / 0.1),
+    0 14px 44px rgba(0, 0, 0, 0.22);
 }
