@@ -1,13 +1,13 @@
 import { motion } from 'framer-motion'
-import { MapPin, Briefcase, Hammer, CalendarCheck } from 'lucide-react'
+import { MapPin, Hammer, Coffee, Wand2 } from 'lucide-react'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { useScrollAnimation } from '@/hooks/useScrollAnimation'
 
 const quickFacts = [
-  { icon: MapPin, label: 'Location', value: 'Mumbai, India' },
-  { icon: Briefcase, label: 'Open to', value: 'Senior SDE / Senior Technical Lead' },
+  { icon: MapPin, label: 'Location', value: 'Pune, Maharashtra, India' },
   { icon: Hammer, label: 'Currently building', value: 'Cipher – 2FA Authenticator' },
-  { icon: CalendarCheck, label: 'Available for', value: 'Full-time · Contract' },
+  { icon: Coffee, label: 'Open to', value: 'Coffee chats · Open-source Magic · Dark Arts' },
+  { icon: Wand2, label: 'Powered by', value: 'Caffeine, curiosity & compiler errors' },
 ]
 
 export function About() {
@@ -55,7 +55,7 @@ export function About() {
             initial="hidden"
             animate={facts.isInView ? 'visible' : 'hidden'}
             transition={{ duration: 0.6, ease: 'easeOut', delay: 0.2 }}
-            className="bg-bg-surface border border-border rounded-2xl p-6 flex flex-col gap-4"
+            className="magic-card bg-bg-surface border border-border rounded-2xl p-6 flex flex-col gap-4"
           >
             {quickFacts.map(({ icon: Icon, label, value }) => (
               <div key={label} className="flex items-start gap-3">

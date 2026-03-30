@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Mail, Phone } from 'lucide-react'
+import { Mail } from 'lucide-react'
 import { GitHubIcon, LinkedInIcon, XIcon, InstagramIcon } from '@/components/ui/SocialIcons'
 import { useMagnetic } from '@/hooks/useMagnetic'
 import { useScrollAnimation } from '@/hooks/useScrollAnimation'
@@ -63,8 +63,8 @@ export function Contact() {
             Let's build something.
           </h2>
           <p className="font-body text-base text-text-secondary max-w-md mx-auto">
-            I'm currently open to senior engineering and technical lead opportunities. Drop me a
-            line — I read every message.
+            Got a cool project, an open-source adventure, or just want to grab a virtual coffee?
+            Drop me a line — I read every message.
           </p>
         </motion.div>
 
@@ -81,12 +81,6 @@ export function Contact() {
             icon={Mail}
             label="Email"
             value="tobytesizedwizard@proton.me"
-          />
-          <MagneticContact
-            href="tel:+15550000000"
-            icon={Phone}
-            label="Mobile"
-            value="+1 (555) 000-0000"
           />
         </motion.div>
 
