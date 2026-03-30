@@ -1,6 +1,7 @@
 import { Navbar } from "@/components/layout/Navbar"
 import { Footer } from "@/components/layout/Footer"
 import { ScrollProgress } from "@/components/ui/ScrollProgress"
+import { MagicBackground } from "@/components/ui/MagicBackground"
 import { Hero } from "@/components/sections/Hero"
 import { About } from "@/components/sections/About"
 import { Skills } from "@/components/sections/Skills"
@@ -14,6 +15,7 @@ function App() {
   return (
     <>
       <ScrollProgress />
+      <MagicBackground />
       <Navbar />
       <main>
         <Hero />
