@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { ExternalLink, GitPullRequest, ShieldCheck } from 'lucide-react'
+import { ExternalLink, GitPullRequest, ShieldCheck, Globe, Briefcase } from 'lucide-react'
 import type { Project } from '@/data/projects'
 
 interface FeaturedProjectCardProps {
@@ -29,18 +29,31 @@ export function FeaturedProjectCard({ project }: FeaturedProjectCardProps) {
         {/* Left: content */}
         <div className="flex-1">
           <div className="flex items-center gap-3 mb-5">
-            <img
-              src="/cipher/cipher-icon.png"
-              alt="Cipher app icon"
-              className="w-14 h-14 rounded-2xl shadow-xl"
-              onError={e => {
-                ;(e.currentTarget as HTMLImageElement).style.display = 'none'
-              }}
-            />
+            {/* Project icon — use asset if available, else letter avatar */}
+            {project.icon ? (
+              <img
+                src={project.icon}
+                alt={`${project.title} icon`}
+                className="w-14 h-14 rounded-2xl shadow-xl shrink-0"
+                onError={e => {
+                  ;(e.currentTarget as HTMLImageElement).style.display = 'none'
+                }}
+              />
+            ) : (
+              <div
+                className="w-14 h-14 rounded-2xl shadow-xl shrink-0 flex items-center justify-center border border-white/10"
+                style={{ background: 'rgba(255,255,255,0.05)' }}
+              >
+                <span className="font-display font-extrabold text-2xl text-white/80 select-none">
+                  {project.title[0]}
+                </span>
+              </div>
+            )}
             <div>
               <h3 className="font-display font-extrabold text-3xl text-white">{project.title}</h3>
-              <span className="text-xs font-body font-light tracking-wider text-white/50 uppercase">
-                Featured Project
+              <span className="inline-flex items-center gap-1.5 text-xs font-body font-light tracking-wider text-white/50 uppercase">
+                {project.workProject && <Briefcase size={11} aria-hidden />}
+                {project.workProject ? 'Professional Work' : 'Featured Project'}
               </span>
             </div>
           </div>
@@ -61,8 +74,19 @@ export function FeaturedProjectCard({ project }: FeaturedProjectCardProps) {
             ))}
           </div>
 
-          {/* Store badges + secondary links – all in one flex row */}
+          {/* Links row */}
           <div className="flex flex-wrap items-center gap-3">
+            {project.links.live && (
+              <a
+                href={project.links.live}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white/10 text-white font-body font-medium text-sm hover:bg-white/15 transition-colors duration-200 cursor-pointer border border-white/10"
+              >
+                <Globe size={16} />
+                Visit Site
+              </a>
+            )}
             {project.links.appStore && (
               <a
                 href={project.links.appStore}
@@ -71,7 +95,6 @@ export function FeaturedProjectCard({ project }: FeaturedProjectCardProps) {
                 aria-label="Download on the App Store"
                 className="transition-opacity duration-200 hover:opacity-80 focus-visible:opacity-80"
               >
-                {/* Apple App Store badge – minimum 120×40pt per Apple HIG */}
                 <img
                   src="/app-store-badge.svg"
                   alt="Download on the App Store"
@@ -89,7 +112,6 @@ export function FeaturedProjectCard({ project }: FeaturedProjectCardProps) {
                 aria-label="Get it on Google Play"
                 className="transition-opacity duration-200 hover:opacity-80 focus-visible:opacity-80"
               >
-                {/* Google Play badge – rendered at same visual height as App Store badge */}
                 <img
                   src="/play-store-badge.svg"
                   alt="Get it on Google Play"
