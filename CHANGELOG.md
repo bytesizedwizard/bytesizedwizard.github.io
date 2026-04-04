@@ -11,6 +11,79 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [0.3.0] — 2026-04-04
+
+### Added
+
+#### Hero — HeroParticles canvas
+- New `HeroParticles` component: 60 ambient floating particles rendered on a canvas behind the Hero heading
+
+#### Skills — SectionParticles
+- New `SectionParticles` component: 45 ambient particles rendered behind the skill badge grid
+
+#### Projects — Professional work entries
+- GritUp (https://www.gritup.io) added as a featured professional work project (React, Node.js, React Native, PostgreSQL, AI)
+- PIES Studio (https://pies.io) added as a featured professional work project (Next.js, TypeScript, Generative AI, Node.js)
+- New `workProject?: boolean` and `icon?: string` fields on the `Project` interface
+- New `WorkProjectCard` component: compact card matching `ProjectCard` style; Briefcase "Professional Work" pill top-left, `ArrowUpRight` live-site link top-right
+
+#### Cipher — static pages redesign
+- `public/cipher/privacy/index.html`: full redesign matching main site design language — dark `#09090B` background, `#FFD900` accent, halftone dot-grid, sticky nav with logotype and back-to-site link, gold underline on page title, accent-dot section headings, callout note box, logotype footer
+- `public/cipher/terms/index.html`: same treatment; fixed broken internal privacy link
+
+#### Dev-server routing
+- `vite.config.ts`: `cipherPagesPlugin` inline Vite plugin rewrites `/cipher/*` directory URL requests to their `index.html` in both `vite dev` and `vite preview`, preventing the SPA fallback from intercepting them
+
+#### Social icons
+- `StackOverflowIcon` SVG component added to `SocialIcons.tsx`
+
+### Changed
+
+#### Hero
+- Centered full-width typographic layout replaces two-column mascot layout
+- Word-by-word blur+fade entrance animation (each word animates independently)
+- Breathing radial glow behind the display heading
+
+#### About
+- Two-column grid: bio prose (left) + quick-facts card (right)
+- Halftone dot-grid background with radial vignette
+- Stats bar added (years of craft, lines of code, debug loops survived) with scroll-triggered entrance
+
+#### Skills
+- Category rows with accent dot, label, and right-aligned skill count
+- Two radial accent glows for depth
+- `SkillBadge`: fixed height `h-[100px]` so all badges align regardless of label length
+- Badge blur+fade stagger entrance on scroll
+
+#### Education & Certifications
+- Education: card layout with year-range pill badge, `MapPin` location; halftone dot-grid background
+- Certifications: halftone background (replaced diagonal stripe); grid layout `grid-cols-1 sm:grid-cols-2 lg:grid-cols-3`
+- `CertCard`: elevated card style (`bg-elevated/90 backdrop-blur border`); large watermark number removed
+- No oversized faded numbers in either section
+
+#### Projects
+- Layout order: personal featured → personal WIP ("Also building") → professional work
+- `FeaturedProjectCard` generified: uses `project.icon` for image if available, letter avatar otherwise; shows Briefcase badge for `workProject: true`; adds Globe / "Visit Site" button for `project.links.live`
+- `ProjectCard`: elevated card style (`min-h-[220px]`, `bg-elevated/90 backdrop-blur border`); animated pulsing status dot (amber for WIP); hover lift; blur+fade entrance
+
+#### OpenSource
+- Halftone dot-grid background with radial vignette added for visual continuity with adjacent sections
+
+#### Footer
+- Three-column grid layout: brand + tagline / legal links / social icons
+- Gold gradient accent line at top of footer
+- Social icons in bordered pill buttons with hover glow
+- Bottom row: copyright (left) + tech stack attribution (right)
+
+### Fixed
+
+- `cipher/`: removed legacy root `cipher/` directory (old dark-green layout with broken relative-path images); all static pages now correctly live under `public/cipher/`
+- `public/cipher/terms/index.html`: fixed broken internal link that pointed to `../terms/index.html` (should be `/cipher/privacy/`)
+- `index.html`: page title and OG/Twitter titles changed from em-dash separator to `|`
+- `globals.css`: removed redundant `md:py-32` override on `.section-padding`
+
+---
+
 ## [0.2.0] — 2026-03-30
 
 ### Added
@@ -137,6 +210,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
-[Unreleased]: https://github.com/bytesizedwizard/bytesizedwizard.github.io/compare/v0.2.0...HEAD
+[Unreleased]: https://github.com/bytesizedwizard/bytesizedwizard.github.io/compare/v0.3.0...HEAD
+[0.3.0]: https://github.com/bytesizedwizard/bytesizedwizard.github.io/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/bytesizedwizard/bytesizedwizard.github.io/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/bytesizedwizard/bytesizedwizard.github.io/releases/tag/v0.1.0
