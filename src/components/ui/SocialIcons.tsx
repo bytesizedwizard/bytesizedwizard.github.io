@@ -51,6 +51,22 @@ export function XIcon({ size = 20, ...props }: IconProps) {
   )
 }
 
+export function StackOverflowIcon({ size = 20, ...props }: IconProps) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      aria-hidden="true"
+      {...props}
+    >
+      <path d="M18.986 21.865v-6.404h2.134V24H1.844v-8.539h2.13v6.404h15.012zM6.111 19.731H17.78v-2.137H6.111v2.137zm.259-4.852l11.584 2.42.452-2.068-11.584-2.42-.452 2.068zm1.359-5.056l10.739 5.013.92-1.95-10.74-5.013-.919 1.95zm2.715-4.785l8.377 8.464 1.514-1.519-8.378-8.465-1.513 1.52zm4.588-5.082l-1.149 1.633 9.088 6.378 1.15-1.633-9.089-6.378z" />
+    </svg>
+  )
+}
+
 export function InstagramIcon({ size = 20, ...props }: IconProps) {
   return (
     <svg
